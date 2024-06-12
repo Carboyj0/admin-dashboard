@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Login</h1>
+        <label for="adminPassword">Password:</label>
+        <input type="password" id="adminPassword" placeholder="Enter your password">
+        <button id="adminLoginButton">Login</button>
+    </div>
+    <script>
+        const adminPassword = "METPolice123";
+        const adminDashboardURL = "admin-dashboard.html"; // The admin dashboard page URL
+
+        document.getElementById('adminLoginButton').addEventListener('click', () => {
+            const password = document.getElementById('adminPassword').value;
+            if (password === adminPassword) {
+                window.location.href = adminDashboardURL;
+            } else {
+                alert('Incorrect password.');
+            }
+        });
+    </script>
+</body>
+</html>
